@@ -17,9 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from CBV import views
+from FBV.views import getteacher, getteacherbyid, addteacher, updatedata, deleteteacher
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('student', views.StudentViews.as_view()),
     path('student/<int:pk>/', views.StudentViews.as_view()),
+    path('getteacher/', getteacher),
+    path('getteacherbyid/<int:pk>', getteacherbyid),
+    path('addteacher',addteacher),
+    path('update/<int:pk>', updatedata),
+    path('deleteteacher/<int:pk>', deleteteacher)
 ]
